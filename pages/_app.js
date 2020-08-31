@@ -5,8 +5,16 @@ import Footer from '../components/footer';
 
 class RecipeApp extends App {
 
+     // Execute here getInitialProps and pass this data to your page
+
+  static async getInitialProps(appContext) {
+    // Executing getInitialProps of page you are navigated to
+    const appProps = await App.getInitialProps(appContext)
+    return { ...appProps }
+  }
+
     render(){
-        const {Component} = this.props;
+        const {Component, pageProps} = this.props;
 return(
 <div>
  <Head>
@@ -18,7 +26,7 @@ return(
  </Head>
   <Navbar/>
   <div className="base-page">
- <Component />
+  <Component {...pageProps} />
  </div>
  <Footer/>
   <style jsx>

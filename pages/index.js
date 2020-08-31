@@ -4,6 +4,45 @@ import Carousel from '../components/carousel';
 import RecipeList from '../components/RecipeList';
 import {getRecipes} from '../actions';
 
+const Home = (props)=>{
+  return(
+    <div>
+        <div className="home-page">
+        <div className="container">
+          <div className="row">
+          <div className="col-lg-3">
+            <SideMenue appName="My Recipe List"/>
+          </div>
+          <div className="col-lg-9">
+            <Carousel/>
+
+            <div className="row">
+            <RecipeList recipesData = {props.recipes}/>                     
+            </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  )
+
+}
+
+Home.getInitialProps = async () => {
+  const recipes = await getRecipes()
+
+  return {
+    recipes
+  }
+}
+export default Home;
+
+
+
+
+/*
 class Home extends React.Component 
 {
   constructor(props){
@@ -56,3 +95,4 @@ render()
 }
   }
 export default Home
+*/
