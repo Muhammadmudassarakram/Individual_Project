@@ -2,22 +2,23 @@ import React,{useState , useEffect} from 'react';
 import SideMenue from '../components/sideManue';
 import Carousel from '../components/carousel';
 import RecipeList from '../components/RecipeList';
-import {getRecipes} from '../actions';
+import {getRecipes,getCategories} from '../actions';
 
 const Home = (props)=>{
+  const { images, categories, recipes } = props;
   return(
     <div>
         <div className="home-page">
         <div className="container">
           <div className="row">
           <div className="col-lg-3">
-            <SideMenue appName="My Recipe List"/>
+            <SideMenue appName="My Recipe List" categories = {categories}/>
           </div>
           <div className="col-lg-9">
-            <Carousel/>
+            <Carousel images = {images}/>
 
             <div className="row">
-            <RecipeList recipesData = {props.recipes}/>                     
+            <RecipeList recipesData = {recipes}/>                     
             </div>
 
             </div>
@@ -31,10 +32,17 @@ const Home = (props)=>{
 }
 
 Home.getInitialProps = async () => {
-  const recipes = await getRecipes()
+  const recipes = await getRecipes();
+  const categories = await getCategories();
+  const images = recipes.map(recipe => ({
+      id: `image-${recipe.id}`,
+      url: recipe.cover,
+      name: recipe.name }))
 
   return {
-    recipes
+    recipes,
+    images,
+    categories
   }
 }
 export default Home;
