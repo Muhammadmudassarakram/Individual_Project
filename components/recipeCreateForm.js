@@ -17,6 +17,24 @@ const RecipeCreateForm = () => {
         })
       }
 
+      const handleCategoryChange = (event) => {
+        debugger
+        const { options } = event.target
+        const optionsLength = options.length
+        let value = []
+
+        for (let i = 0; i < optionsLength; i++) {
+          if (options[i].selected) {
+            value.push(options[i].value)
+          }
+        }
+
+        setForm({
+          ...form,
+          category: value.toString()
+        })
+      }
+
     return (
         <form>
 
@@ -98,11 +116,12 @@ const RecipeCreateForm = () => {
           </div>
 
           <div className="form-group">
-            <label for="genre">Catogory</label>
+            <label for="category">Category</label>
              <select
+             onChange={handleCategoryChange}
               multiple
               className="form-control"
-              id="genre">
+              id="category">
               <option>BreakFast</option>
               <option>Dinner</option>
               <option>Cakes</option>

@@ -46,23 +46,23 @@
   ]
 
   const CATEGORY_DATA = [
-    {id: 'c-4', name: 'BreakFast'},
-    {id: 'c-5', name: 'Dinner'},
-    {id: 'c-1', name: 'Cakes'},
-    {id: 'c-10', name: 'Desserts'},
+    {id: 'c-1', name: 'BreakFast'},
+    {id: 'c-2', name: 'Dinner'},
+    {id: 'c-3', name: 'Cakes'},
+    {id: 'c-4', name: 'Desserts'},
     {id: 'c-5', name: 'Desi'},
     {id: 'c-6', name: 'Drinks'},
-    {id: 'c-3', name: 'Dairy Free'},
-    {id: 'c-2', name: 'Gluten Free'},
-    {id: 'c-5', name: 'Lunch'},
-    {id: 'c-1', name: 'Veg'},
-    {id: 'c-2', name: 'Non-Veg'},
-    {id: 'c-3', name: 'Spicy'},
-    {id: 'c-4', name: 'Sweet'},
-    {id: 'c-5', name: 'Salty'},
-    {id: 'c-7', name: 'Salads'},
-    {id: 'c-8', name: 'Snacks'},
-    {id: 'c-9', name: 'Soups'},
+    {id: 'c-7', name: 'Dairy Free'},
+    {id: 'c-8', name: 'Gluten Free'},
+    {id: 'c-9', name: 'Lunch'},
+    {id: 'c-10', name: 'Veg'},
+    {id: 'c-11', name: 'Non-Veg'},
+    {id: 'c-12', name: 'Spicy'},
+    {id: 'c-13', name: 'Sweet'},
+    {id: 'c-14', name: 'Salty'},
+    {id: 'c-15', name: 'Salads'},
+    {id: 'c-16', name: 'Snacks'},
+    {id: 'c-17', name: 'Soups'},
     
     
     
