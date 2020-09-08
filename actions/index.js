@@ -95,6 +95,18 @@
       return RECIPE_DATA;
   }
 
+  export const createRecipe = (recipe) => {
+    return new Promise((resolve, reject) => {
+      // Create ID for recipe
+      recipe.id = Math.random().toString(36).substr(2, 7)
+      RECIPE_DATA.push(recipe)
+      setTimeout(() => {
+        resolve(RECIPE_DATA)
+        // reject('Cannot fetch data!')
+      }, 50)
+    })
+  }
+
 //export the specific recipe 
   export const getRecipeById = (id) => {
 

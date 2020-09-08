@@ -1,10 +1,14 @@
 import { useState } from 'react';
 
-const RecipeCreateForm = () => {
+const RecipeCreateForm = (props) => {
 
     const [form, setForm] = useState({
-        name: 'Some Recipe',
-        description: 'Some Description'
+        name: '',
+        description: '',
+        rating: '',
+        image: '',
+        cover: '',
+        longDesc: ''
       })
 
       const handleChange = (event) => {
@@ -35,12 +39,16 @@ const RecipeCreateForm = () => {
         })
       }
 
+      const submitForm = () => {
+        props.handleFormSubmit({...form})
+      }
+
     return (
         <form>
 
-           { JSON.stringify(form)}
+           
           <div className="form-group">
-            <label for="name">Name</label>
+            <label htmlFor="name">Name</label>
             
             <input
               onChange={handleChange}
@@ -54,7 +62,7 @@ const RecipeCreateForm = () => {
           </div>
 
           <div className="form-group">
-            <label for="description">Description</label>
+            <label htmlFor="description">Description</label>
             <input
               onChange={handleChange}
               value={form.description}
@@ -66,7 +74,7 @@ const RecipeCreateForm = () => {
           </div>
 
           <div className="form-group">
-            <label for="rating">Rating</label>
+            <label htmlFor="rating">Rating</label>
             <input
               onChange={handleChange}
               value={form.rating}
@@ -81,7 +89,7 @@ const RecipeCreateForm = () => {
           </div>
 
           <div className="form-group">
-            <label for="image">Image</label>
+            <label htmlFor="image">Image</label>
             <input
               onChange={handleChange}
               value={form.image}
@@ -93,7 +101,7 @@ const RecipeCreateForm = () => {
           </div>
 
           <div className="form-group">
-            <label for="cover">Cover</label>
+            <label htmlFor="cover">Cover</label>
             <input
               onChange={handleChange}
               value={form.cover}
@@ -105,7 +113,7 @@ const RecipeCreateForm = () => {
           </div>
 
           <div className="form-group">
-            <label for="longDesc">Long Description</label>
+            <label htmlFor="longDesc">Long Description</label>
              <textarea
               onChange={handleChange}
               value={form.longDesc}
@@ -116,7 +124,7 @@ const RecipeCreateForm = () => {
           </div>
 
           <div className="form-group">
-            <label for="category">Category</label>
+            <label htmlFor="category">Category</label>
              <select
              onChange={handleCategoryChange}
               multiple
@@ -141,6 +149,7 @@ const RecipeCreateForm = () => {
               <option>Soups</option>
               </select>
           </div>
+          <button onClick={submitForm} type="button" className="btn btn-primary">Create</button>
         </form>
       )
   }
