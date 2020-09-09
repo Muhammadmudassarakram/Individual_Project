@@ -1,7 +1,10 @@
 const next = require('next')
 const express = require('express');
 const bodyParser = require('body-parser')
-const recipesData = require('./data.json')
+const filePath = './data.json'
+const fs = require('fs')
+const path = require('path')
+const recipesData = require(filePath)
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -25,10 +28,20 @@ app.prepare().then(() => {
 
   server.post('/api/v1/recipes', (req, res) => {
     const recipe = req.body
-    console.log(JSON.stringify(recipe))
-    return res.json({...recipe, createdTime: 'today', author: 'Mudassar'})
+    recipesData.push(movie)
+
+    const pathToFile = path.join(__dirname, filePath)
+    const stringifiedData = JSON.stringify(recipesData, null, 2)
+
+    fs.writeFile(pathToFile, stringifiedData, (err) => {
+      if (err) {
+        return res.status(422).send(err)
+      }
+
+      return res.json('Recipe has been succesfuly added!')
+    })
   })
-  
+
 /*
   server.patch('/api/v1/recipes/:id', (req, res) => {
     const { id } = req.params
