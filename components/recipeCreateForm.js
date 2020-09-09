@@ -22,7 +22,7 @@ const RecipeCreateForm = (props) => {
       }
 
       const handleCategoryChange = (event) => {
-        debugger
+        //debugger
         const { options } = event.target
         const optionsLength = options.length
         let value = []

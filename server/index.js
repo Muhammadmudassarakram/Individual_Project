@@ -1,6 +1,7 @@
 const next = require('next')
 const express = require('express');
 const bodyParser = require('body-parser')
+const recipesData = require('./data.json')
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
@@ -11,7 +12,15 @@ app.prepare().then(() => {
   server.use(bodyParser.json())
 
   server.get('/api/v1/recipes', (req, res) => {
-    return res.json({message: 'Hello World'})
+    // return res.json({message: 'Hello World'})
+     return res.json(recipesData)
+ })
+
+ server.get('/api/v1/recipes/:id', (req, res) => {
+   const { id } = req.params
+   const recipe = recipesData.find(r => r.id === id)
+   return res.json(recipe)
+  
   })
 
   server.post('/api/v1/recipes', (req, res) => {
@@ -19,11 +28,14 @@ app.prepare().then(() => {
     console.log(JSON.stringify(recipe))
     return res.json({...recipe, createdTime: 'today', author: 'Mudassar'})
   })
-
+  
+/*
   server.patch('/api/v1/recipes/:id', (req, res) => {
     const { id } = req.params
     return res.json({message: `Updating post of id: ${id}`})
   })
+
+  */
 
   server.delete('/api/v1/recipes/:id', (req, res) => {
     const { id } = req.params
