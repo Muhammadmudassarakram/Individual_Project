@@ -28,7 +28,7 @@ app.prepare().then(() => {
 
   server.post('/api/v1/recipes', (req, res) => {
     const recipe = req.body
-    recipesData.push(movie)
+    recipesData.push(recipe)
 
     const pathToFile = path.join(__dirname, filePath)
     const stringifiedData = JSON.stringify(recipesData, null, 2)
@@ -42,17 +42,41 @@ app.prepare().then(() => {
     })
   })
 
-/*
   server.patch('/api/v1/recipes/:id', (req, res) => {
     const { id } = req.params
-    return res.json({message: `Updating post of id: ${id}`})
-  })
+    const recipe = req.body
+    const recipeIndex = recipesData.findIndex(r => r.id === id)
 
-  */
+    recipesData[recipeIndex] = recipe
+
+    const pathToFile = path.join(__dirname, filePath)
+    const stringifiedData = JSON.stringify(recipesData, null, 2)
+
+    fs.writeFile(pathToFile, stringifiedData, (err) => {
+      if (err) {
+        return res.status(422).send(err)
+      }
+
+      return res.json(recipe)
+    })
+  })
 
   server.delete('/api/v1/recipes/:id', (req, res) => {
     const { id } = req.params
-    return res.json({message: `Deleting post of id: ${id}`})
+    const recipeIndex = recipesData.findIndex(r => r.id === id)
+    recipesData.splice(recipeIndex, 1)
+
+    const pathToFile = path.join(__dirname, filePath)
+    const stringifiedData = JSON.stringify(recipesData, null, 2)
+
+    fs.writeFile(pathToFile, stringifiedData, (err) => {
+      if (err) {
+        return res.status(422).send(err)
+      }
+
+      return res.json('Recipe has been succesfuly added!')
+    })
+
   })
 
   // server.get('/faq', (req, res) => {

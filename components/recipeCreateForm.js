@@ -1,15 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const RecipeCreateForm = (props) => {
 
-    const [form, setForm] = useState({
-        name: '',
-        description: '',
-        rating: '',
-        image: '',
-        cover: '',
-        longDesc: ''
-      })
+  const [ isInitialDataLoaded, setIsInitialDataLoaded] = useState(false)
+
+  const defaultData = {
+    name: '',
+    description: '',
+    rating: '',
+    image: '',
+    cover: '',
+    longDesc: ''
+
+  }
+
+  const formData = props.initialData ? {...props.initialData} : defaultData
+
+  const [form, setForm] = useState(formData)
+
+  // useEffect(() => {
+  //   if (props.initialData) {
+  //     setForm(props.initialData)
+  //     setIsInitialDataLoaded(true)
+  //   }
+  // }, [isInitialDataLoaded])
 
       const handleChange = (event) => {
         const target = event.target
@@ -149,7 +163,12 @@ const RecipeCreateForm = (props) => {
               <option>Soups</option>
               </select>
           </div>
-          <button onClick={submitForm} type="button" className="btn btn-primary">Create</button>
+          <button
+            onClick={submitForm}
+            type="button"
+            className="btn btn-primary">
+            { props.submitButton || 'Create' }
+         </button>
         </form>
       )
   }

@@ -54,3 +54,13 @@ import axios from 'axios';
 
     return axios.get(`${BASE_URL}/api/v1/recipes/${id}`).then(res => res.data)
 }
+//Update the selected recipe
+export const updateRecipe = (recipe) => {
+  return axios.patch(`${BASE_URL}/api/v1/recipes/${recipe.id}`, recipe)
+    .then(res => res.data)
+}
+
+//Delete the slected recipe
+export const deleteRecipe = (id) => {
+  return axios.delete(`${BASE_URL}/api/v1/recipes/${id}`).then(res => res.data)
+}

@@ -1,13 +1,19 @@
 import { useRouter } from 'next/router';
-import { getRecipeById } from '../../actions'
+import Link from 'next/link';
+import { getRecipeById,deleteRecipe } from '../../../actions';
 
 
 
 const Recipe = (props) => {
 
-    const { recipe } = props
     const router = useRouter()
     const { id } = router.query    // const id  = router.query.id;
+    const { recipe } = props;
+    const handleDeleteRecipe = (id) => {
+    deleteRecipe(id).then(() => {
+      router.push('/')
+    })
+  }
 
   return (
     <div className="container">
@@ -16,7 +22,13 @@ const Recipe = (props) => {
         <p className="lead">{ recipe.description }</p>
         <hr className="my-4" />
         <p>{ recipe.type }</p>
-        <a className="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <button className="btn btn-primary btn-lg mr-1" href="#" role="button">Learn more</button>
+        <button onClick={() => handleDeleteRecipe(id)} className="btn btn-danger btn-lg mr-1" href="#" role="button">Delete</button>
+        <Link href="/recipes/[id]/edit" as={`/recipes/${id}/edit`}>
+           <button
+            className="btn btn-warning btn-lg"
+            role="button">Edit</button>
+        </Link>
       </div>
       <p className="desc-text">
         { recipe.longDesc }
