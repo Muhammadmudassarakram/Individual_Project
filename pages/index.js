@@ -6,19 +6,38 @@ import {getRecipes,getCategories} from '../actions';
 
 const Home = (props)=>{
   const { images, categories, recipes } = props;
+  const [ filter, setFilter ] =  useState('All')
+
+  const changeCategory = category => {
+    setFilter(category)
+  }
+
+  const filterRecipes = recipes => {
+    if (filter === 'All') {
+      return recipes;
+    }
+
+    return recipes.filter((r) => {
+      return r.category && r.category.includes(filter)
+    })
+
+  }
   return(
     <div>
         <div className="home-page">
         <div className="container">
           <div className="row">
           <div className="col-lg-3">
-            <SideMenue appName="My Recipe List" categories = {categories}/>
+            <SideMenue appName="My Recipe List"  
+            changeCategory={changeCategory}
+            activeCategory={filter}
+            categories={categories}/>
           </div>
           <div className="col-lg-9">
-            <Carousel images = {images}/>
-
+            <Carousel images={images}/>
+            
             <div className="row">
-            <RecipeList recipesData = {recipes}/>                     
+            <RecipeList recipes={filterRecipes(recipes) || []} />                    
             </div>
 
             </div>

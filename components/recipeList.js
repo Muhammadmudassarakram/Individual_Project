@@ -14,8 +14,8 @@ shortenText = (text,maxLength)=>{
 };
 
   
-  renderData(recipesData){
-    return recipesData.map(recipe=>
+  renderData(recipes){
+    return recipes.map(recipe=>
       (
     
     <div key={recipe.id} className="col-lg-4 col-md-6 mb-4">
@@ -29,7 +29,7 @@ shortenText = (text,maxLength)=>{
           <a >{recipe.name}</a>
           </Link>
         </h4>
-        
+        <div>{recipe.category}</div>
        <p className="card-text">{this.shortenText(recipe.description , 200)}</p>
       </div>
       <div className="card-footer">
@@ -46,11 +46,11 @@ shortenText = (text,maxLength)=>{
   
       render(){
        
-       const {recipesData} = this.props;                  //const recipesData = this.props.recipesData;
+       const {recipes} = this.props;                  //const recipes = this.props.recipes;
       
       return(
         <React.Fragment>
-         {this.renderData(recipesData)}
+         {this.renderData(recipes)}
         </React.Fragment>
       )
     }

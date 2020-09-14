@@ -4,6 +4,7 @@ import axios from 'axios';
   const BASE_URL = 'http://localhost:3000';
 
   const CATEGORY_DATA = [
+    {id: 'c-0', name: 'All'},
     {id: 'c-1', name: 'BreakFast'},
     {id: 'c-2', name: 'Dinner'},
     {id: 'c-3', name: 'Cakes'},

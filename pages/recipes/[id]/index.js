@@ -21,7 +21,7 @@ const Recipe = (props) => {
         <h1 className="display-4">{ recipe.name }</h1>
         <p className="lead">{ recipe.description }</p>
         <hr className="my-4" />
-        <p>{ recipe.type }</p>
+        <p>{ recipe.category }</p>
         <button className="btn btn-primary btn-lg mr-1" href="#" role="button">Learn more</button>
         <button onClick={() => handleDeleteRecipe(id)} className="btn btn-danger btn-lg mr-1" href="#" role="button">Delete</button>
         <Link href="/recipes/[id]/edit" as={`/recipes/${id}/edit`}>
