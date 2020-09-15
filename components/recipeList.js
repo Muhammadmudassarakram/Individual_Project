@@ -29,7 +29,7 @@ shortenText = (text,maxLength)=>{
           <a >{recipe.name}</a>
           </Link>
         </h4>
-        <div>{recipe.category}</div>
+        <div className="recipe-category">{recipe.category}</div>
        <p className="card-text">{this.shortenText(recipe.description , 200)}</p>
       </div>
       <div className="card-footer">

@@ -35,7 +35,6 @@ const Home = (props)=>{
           </div>
           <div className="col-lg-9">
             <Carousel images={images}/>
-            
             <div className="row">
             <RecipeList recipes={filterRecipes(recipes) || []} />                    
             </div>

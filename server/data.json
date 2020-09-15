@@ -10,7 +10,7 @@
     "PrepTime": "15 min",
     "cookTime": "15 min",
     "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80",
-    "cover": "https://images.unsplash.com/photo-1497124401559-3e75ec2ed794?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
+    "cover": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&h=400&q=80",
     "category": "Spicy"
   },
   {
@@ -24,7 +24,7 @@
     "PrepTime": "15 min",
     "cookTime": "15 min",
     "image": "https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80",
-    "cover": "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1640&q=80",
+    "cover": "https://images.unsplash.com/photo-1501200291289-c5a76c232e5f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1640&q=80",
     "category": "Dinner"
   },
   {
@@ -38,7 +38,7 @@
     "PrepTime": "15 min",
     "cookTime": "15 min",
     "image": "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80",
-    "cover": "https://images.unsplash.com/photo-1462759353907-b2ea5ebd72e7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2389&q=80",
+    "cover": "https://images.unsplash.com/photo-1559620192-032c4bc4674e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1640&q=80",
     "category": "Cakes"
   },
   {
@@ -46,9 +46,19 @@
     "description": "My first recipe test data My first recipe test data",
     "rating": "4",
     "image": "https://images.unsplash.com/photo-1562226581-a5121882eec8?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80",
-    "cover": "https://images.unsplash.com/photo-1562226581-a5121882eec8?ixlib=rb-1.2.1&auto=format&fit=crop&w=2334&q=80",
+    "cover": "https://images.unsplash.com/photo-1562226581-a5121882eec8?ixlib=rb-1.2.1&auto=format&fit=crop&w=1640&q=80",
     "longDesc": "My first recipe test dataMy first recipe test dataMy first recipe test datavMy first recipe test dataMy first recipe test data",
     "category": "Dinner,Desserts,Gluten Free,Veg,Sweet",
     "id": "2mc4j"
+  },
+  {
+    "name": "Chock late Biscuits ",
+    "description": "Really easy to make, Its possible to make them sugar free. There is not lot of stuff and time require to make them. Click on more info",
+    "rating": "3",
+    "image": "https://images.unsplash.com/photo-1594077016007-6825dcb85969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+    "cover": "https://images.unsplash.com/photo-1594077016007-6825dcb85969?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1640&q=80",
+    "longDesc": "Really easy to make, Its possible to make them sugar free. There is not lot of stuff and time require to make them. Click on more info.",
+    "category": "Veg,Sweet",
+    "id": "htb95"
   }
 ]

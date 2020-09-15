@@ -2,6 +2,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import Navbar from '../components/navebar';
 import Footer from '../components/footer';
+import '../styles/index.scss';
 
 class RecipeApp extends App {
 
@@ -32,7 +33,8 @@ return(
   <style jsx>
     {`
     .base-page{
-      padding-top:80px;
+      padding-top: 100px;
+    padding-bottom: 200px;
     }
     `}
   </style>
