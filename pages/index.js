@@ -28,10 +28,11 @@ const Home = (props)=>{
         <div className="container">
           <div className="row">
           <div className="col-lg-3">
-            <SideMenue appName="My Recipe List"  
+            <SideMenue   
             changeCategory={changeCategory}
             activeCategory={filter}
-            categories={categories}/>
+            categories={categories}
+            appName={"Categories"}/>
           </div>
           <div className="col-lg-9">
             <Carousel images={images}/>
@@ -55,7 +56,7 @@ Home.getInitialProps = async () => {
   const images = recipes.map(recipe => ({
       id: `image-${recipe.id}`,
       url: recipe.cover,
-      name: recipe.name }))
+      name: recipe.recipeName }))
 
   return {
     recipes,

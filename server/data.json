@@ -10,7 +10,7 @@
     "PrepTime": "15 min",
     "cookTime": "15 min",
     "image": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&h=300&q=80",
-    "cover": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&h=400&q=80",
+    "cover": "https://images.unsplash.com/photo-1589302168068-964664d93dc0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80",
     "category": "Spicy"
   },
   {
@@ -60,5 +60,27 @@
     "longDesc": "Really easy to make, Its possible to make them sugar free. There is not lot of stuff and time require to make them. Click on more info.",
     "category": "Veg,Sweet",
     "id": "htb95"
+  },
+  {
+    "name": "Saag",
+    "description": "A new testing recipe djkjjskfjkhf   dkkshfklsj  khkf",
+    "rating": "5",
+    "image": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+    "cover": "https://images.unsplash.com/photo-1576045057995-568f588f82fb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80",
+    "longDesc": "Fjgkkskg jajfkafj  jjfskhsjkjs scsshkhshk",
+    "category": "Dinner",
+    "id": "4wns2"
+  },
+  {
+    "recipeName": "My test recipe",
+    "description": "My first recipe test data",
+    "ingredients": "Chicken, Potoato, etc",
+    "rating": "",
+    "image": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    "cover": "https://images.unsplash.com/photo-1498837167922-ddd27525d352?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
+    "video": "4d5L_zJl668",
+    "procedure": "First checik\nhffkskkj\nkfjkksjkl\nhhhkl",
+    "category": "Dinner",
+    "id": "qg6xq"
   }
 ]

@@ -5,12 +5,14 @@ const RecipeCreateForm = (props) => {
   const [ isInitialDataLoaded, setIsInitialDataLoaded] = useState(false)
 
   const defaultData = {
-    name: '',
+    recipeName: '',
     description: '',
+    ingredients:'',
     rating: '',
     image: '',
     cover: '',
-    longDesc: ''
+    video: '',
+    procedure: ''
 
   }
 
@@ -62,17 +64,17 @@ const RecipeCreateForm = (props) => {
 
            
           <div className="form-group">
-            <label htmlFor="name">Name</label>
+            <label htmlFor="recipeName">Recipe Name</label>
             
             <input
               onChange={handleChange}
               value={form.name}
-              name="name"
+              name="recipeName"
               type="text"
               className="form-control"
-              id="name"
+              id="recipeName"
               aria-describedby="emailHelp"
-              placeholder="Recipe form place holder" />
+              placeholder="Recipe name" />
           </div>
 
           <div className="form-group">
@@ -84,8 +86,34 @@ const RecipeCreateForm = (props) => {
               type="text"
               className="form-control"
               id="description"
-              placeholder="Somewhere in Description place holder ..." />
+              placeholder="Some Description ..." />
           </div>
+
+          <div className="form-group">
+            <label htmlFor="ingredients">Ingredients</label>
+             <textarea
+              onChange={handleChange}
+              value={form.ingredients}
+              name="ingredients"
+              className="form-control"
+              id="ingredients"
+              rows="3"
+              placeholder="Ingredients ..."></textarea>
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="procedure">Procedure</label>
+             <textarea
+              onChange={handleChange}
+              value={form.procedure}
+              name="procedure"
+              className="form-control"
+              id="procedure"
+              rows="6"
+              placeholder="How to make ..."></textarea>
+          </div>
+
+          
 
           <div className="form-group">
             <label htmlFor="rating">Rating</label>
@@ -127,14 +155,15 @@ const RecipeCreateForm = (props) => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="longDesc">Long Description</label>
-             <textarea
+            <label htmlFor="video">Video</label>
+            <input
               onChange={handleChange}
-              value={form.longDesc}
-              name="longDesc"
+              value={form.video}
+              name="video"
+              type="text"
               className="form-control"
-              id="longDesc"
-              rows="3"></textarea>
+              id="video"
+              placeholder="Youtube video id.." />
           </div>
 
           <div className="form-group">

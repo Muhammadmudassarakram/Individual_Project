@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Navbar from '../components/navebar';
 import Footer from '../components/footer';
 import '../styles/index.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class RecipeApp extends App {
 
