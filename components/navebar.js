@@ -1,6 +1,26 @@
+import React from "react";
 import Link from 'next/link';
+import auth0 from '../services/auth0';
 
 const Navbar = ()=>{
+    
+    const Login = () => {
+        
+        return (
+            <Link href=''>
+            <a className="nav-link " onClick={auth0.login}> login </a>
+            </Link>
+        )
+      }
+      
+      const Logout = () => {
+        return (
+       <Link href=''>
+          <a className="nav-link"> Logout </a>
+          </Link>
+        )
+      }
+
     return(
         <div>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -36,6 +56,18 @@ const Navbar = ()=>{
                 <a className="nav-link" >Contact</a>
                 </Link>
             </li>
+             
+              { 
+                <li className="nav-item">
+                <Login />
+                  </li>
+              }
+              { 
+              
+                <li className="nav-item">
+                <Logout />
+                </li>
+              }
             </ul>
         </div>
         </div>

@@ -56,7 +56,7 @@ Home.getInitialProps = async () => {
   const images = recipes.map(recipe => ({
       id: `image-${recipe.id}`,
       url: recipe.cover,
-      name: recipe.recipeName }))
+      name: recipe.name }))
 
   return {
     recipes,

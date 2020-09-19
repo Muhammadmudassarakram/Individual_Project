@@ -5,7 +5,7 @@ const RecipeCreateForm = (props) => {
   const [ isInitialDataLoaded, setIsInitialDataLoaded] = useState(false)
 
   const defaultData = {
-    recipeName: '',
+    name: '',
     description: '',
     ingredients:'',
     rating: '',
@@ -64,15 +64,15 @@ const RecipeCreateForm = (props) => {
 
            
           <div className="form-group">
-            <label htmlFor="recipeName">Recipe Name</label>
+            <label htmlFor="name">Recipe Name</label>
             
             <input
               onChange={handleChange}
               value={form.name}
-              name="recipeName"
+              name="name"
               type="text"
               className="form-control"
-              id="recipeName"
+              id="name"
               aria-describedby="emailHelp"
               placeholder="Recipe name" />
           </div>

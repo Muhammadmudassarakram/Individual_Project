@@ -21,12 +21,12 @@ shortenText = (text,maxLength)=>{
     <div key={recipe.id} className="col-lg-4 col-md-6 mb-4">
      <div className="card h-100">
      <Link href="/recipes/[id]" as={`/recipes/${recipe.id}`}>
-      <a><img className="card-img-top" src={recipe.image} alt={recipe.recipeName} /></a>
+      <a><img className="card-img-top" src={recipe.image} alt={recipe.name} /></a>
      </Link>
       <div className="card-body">
         <h4 className="card-title">
         <Link href="/recipes/[id]" as={`/recipes/${recipe.id}`}>
-          <a >{recipe.recipeName}</a>
+          <a >{recipe.name}</a>
           </Link>
         </h4>
         <div className="recipe-category">{recipe.category}</div>

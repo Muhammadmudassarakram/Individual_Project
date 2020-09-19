@@ -20,7 +20,7 @@ const Recipe = (props) => {
   return (
     <div className="container">
       <div className="jumbotron">
-        <h1 className="display-4">{ recipe.recipeName }</h1>
+        <h1 className="display-4">{ recipe.name }</h1>
         <p>{ recipe.category }</p>
         <hr className="my-4" />
         <h2 className="display-6">Description</h2>
