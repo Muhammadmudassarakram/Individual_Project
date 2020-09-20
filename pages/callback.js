@@ -13,7 +13,7 @@ class Callback extends React.Component{
     {
         return(
         <React.Fragment>
-            <h1>I am call back </h1>
+            <h1>Verifying login data ... </h1>
         </React.Fragment>)
     }
 }

@@ -7,7 +7,7 @@ import '../styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import auth0 from '../services/auth0';
 
-class RecipeApp extends App {
+class BaseLayout extends App {
    
   static async getInitialProps({Component,router,ctx}) {
     let pageProps={}
@@ -52,4 +52,4 @@ return(
 )
 }
 }
-export default RecipeApp; 
+export default BaseLayout; 

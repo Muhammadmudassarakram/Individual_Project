@@ -2,7 +2,7 @@ import React from "react";
 import Link from 'next/link';
 import auth0 from '../services/auth0';
 
-const Navbar = (props)=>{
+const Header = (props)=>{
 
    // const { isAuthenticated, user, className } = props;
 
@@ -81,4 +81,4 @@ const Navbar = (props)=>{
     )
 }
 
-export default Navbar;
+export default Header;
