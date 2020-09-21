@@ -1,21 +1,28 @@
 import React from "react";
 import Link from 'next/link';
 import auth0 from '../services/auth0';
+import {
+  Collapse,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownMenu} from 'reactstrap';
+
 
 const Login = () => {
-        
   return (
-      <Link href='/'>
-      <a className="nav-link " onClick={auth0.login}> Login </a>
-      </Link>
+    <span onClick={auth0.login} > Login </span>
   )
 }
 
 const Logout = () => {
   return (
- <Link href='/'>
-    <a className="nav-link" onClick={auth0.logout}> Logout </a>
-    </Link>
+    <span onClick={auth0.logout}> Logout </span>
   )
 }
 export default class Navbar extends React.Component {
@@ -27,6 +34,7 @@ export default class Navbar extends React.Component {
 
    }
    
+      
    
    
     
@@ -69,15 +77,18 @@ export default class Navbar extends React.Component {
                 </Link>
             </li>
              
-              { !isAuthenticated &&
+            { !isAuthenticated &&
                 <li className="nav-item">
-                <Login />
-                  </li>
+                  <Link href='/contact'>
+                  <a className="nav-link" ><Login /></a>
+                  </Link>
+                </li>
               }
-              
               { isAuthenticated &&
                 <li className="nav-item">
-                <Logout />
+                  <Link href='/contact'>
+                  <a className="nav-link" ><Logout /></a>
+                  </Link>
                 </li>
               }
             </ul>

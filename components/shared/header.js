@@ -1,84 +1,112 @@
-import React from "react";
+import React from 'react';
 import Link from 'next/link';
+import ActiveLink from '../ActiveLink';
+import {
+  Collapse,
+  Navbar,
+  NavbarToggler,
+  NavbarBrand,
+  Nav,
+  NavItem,
+  NavLink,
+  Dropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownMenu} from 'reactstrap';
+
 import auth0 from '../../services/auth0';
 
-const Header = (props)=>{
+const BsNavLink = (props) => {
+  const { route, title } = props;
+  const className = props.className || "";
 
-   // const { isAuthenticated, user, className } = props;
-
-   const { isAuthenticated } = props;
-   console.log(isAuthenticated);
-
-    const Login = () => {
-        
-        return (
-            <Link href='/'>
-            <a className="nav-link " onClick={auth0.login}> Login </a>
-            </Link>
-        )
-      }
-      
-      const Logout = () => {
-        return (
-       <Link href='/'>
-          <a className="nav-link" onClick={auth0.logout}> Logout </a>
-          </Link>
-        )
-      }
-
-    return(
- <div>
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div className="container">
-         <a className="navbar-brand" href="#">Start Bootstrap</a>
-        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav ml-auto">
-            <li className="nav-item active">
-            <Link href='/'>
-                <a className="nav-link" >Home
-                <span className="sr-only">(current)</span>
-                </a>
-                </Link>
-            </li>
-
-            <li className="nav-item">
-            <Link href='/about'>
-                <a className="nav-link" >About</a>
-                </Link>
-            </li>
-
-            <li className="nav-item">
-                <Link href='/services'>
-                <a className="nav-link" >Services</a>
-                </Link>
-            </li>
-
-            <li className="nav-item">
-                <Link href='/contact'>
-                <a className="nav-link" >Contact</a>
-                </Link>
-            </li>
-             
-              { !isAuthenticated &&
-                <li className="nav-item">
-                <Login />
-                  </li>
-              }
-              
-              { isAuthenticated &&
-                <li className="nav-item">
-                <Logout />
-                </li>
-              }
-            </ul>
-          </div>
-         </div>
-         </nav>
-        </div>
-    )
+  return (
+    <ActiveLink activeClassName="active" route={route}>
+      <a className={`nav-link port-navbar-link ${className}`}> {title} </a>
+    </ActiveLink>
+  )
 }
 
-export default Header;
+const Login = () => {
+  return (
+    <span onClick={auth0.login} className="nav-link port-navbar-link clickable"> Login </span>
+  )
+}
+
+const Logout = () => {
+  return (
+    <span onClick={auth0.logout} className="nav-link port-navbar-link clickable"> Logout </span>
+  )
+}
+
+export default class Header extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isOpen: false,
+      dropdownOpen: false
+    };
+
+    this.toggle = this.toggle.bind(this);
+    this.toggleDropdown = this.toggleDropdown.bind(this);
+  }
+
+  toggle() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
+  toggleDropdown() {
+    this.setState({
+      dropdownOpen: !this.state.dropdownOpen
+    });
+  }
+
+  render() {
+    const { isAuthenticated, user, className } = this.props;
+    const { isOpen } = this.state;
+
+    const menuOpenClass = isOpen ? 'menu-open' : 'menu-close';
+
+    return (
+      <div>
+        <Navbar className={`port-navbar port-nav-base absolute ${className} ${menuOpenClass}`} color="transparent" dark expand="md">
+          <NavbarBrand className="port-navbar-brand" href="/">Desi-Recipe</NavbarBrand>
+          <NavbarToggler onClick={this.toggle} />
+          <Collapse isOpen={this.state.isOpen} navbar>
+            <Nav className="ml-auto" navbar>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route="/" title="Home" />
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route="/about" title="About" />
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route="/services" title="Services" />
+              </NavItem>
+              <NavItem className="port-navbar-item">
+                <BsNavLink route="/contact" title="Contact" />
+              </NavItem>
+              { !isAuthenticated &&
+                <NavItem className="port-navbar-item">
+                  <Login />
+                </NavItem>
+              }
+              { isAuthenticated &&
+                <NavItem className="port-navbar-item">
+                  <Logout />
+                </NavItem>
+              }
+            </Nav>
+          </Collapse>
+        </Navbar>
+      </div>
+    );
+  }
+}
+
+
+
+

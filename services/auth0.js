@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import jwt from 'jsonwebtoken';
 import axios from 'axios';
 
-import { getCookieFromReq } from '../helpers/utils';
+import { getCookieFromReq } from '../helpers/Utils';
 
 const CLIENT_ID = '80uWz1wCPSZt1KZIEQjOPG9Mvn1mdCu8';
 
