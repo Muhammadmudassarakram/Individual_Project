@@ -22,12 +22,14 @@ class EditRecipe extends React.Component {
   render() {
     const { recipe } = this.props;
     return (
-      <div className="container">
-        <h1>Edit the Recipe</h1>
-        <RecipeCreateForm
-          submitButton="Update"
-          initialData={recipe}
-          handleFormSubmit={this.handleUpdateRecipe} />
+      <div className="editRecipe" {...this.props.auth}>
+        <div className="container">
+          <h1>Edit the Recipe</h1>
+          <RecipeCreateForm
+            submitButton="Update"
+            initialData={recipe}
+            handleFormSubmit={this.handleUpdateRecipe} />
+        </div>
       </div>
     )
   }

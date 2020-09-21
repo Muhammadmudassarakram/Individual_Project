@@ -15,9 +15,10 @@ class About extends React.Component{
     render()
     {
         return(
-        <React.Fragment>
+          <div className="about" {...this.props.auth}>
             <h1>I am from react class component</h1>
-        </React.Fragment>)
+           </div>
+        )
     }
 }
 export default About;

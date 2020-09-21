@@ -23,8 +23,8 @@ const Home = (props)=>{
 
   }
   return(
-    <div>
-        <div className="home-page">
+    <div className="home-page" >
+      <div className="margin-nav" >
         <div className="container">
           <div className="row">
           <div className="col-lg-3">

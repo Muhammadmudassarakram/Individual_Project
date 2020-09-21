@@ -1,6 +1,6 @@
 import React from "react";
 import Link from 'next/link';
-import auth0 from '../services/auth0';
+import auth0 from '../../services/auth0';
 
 const Header = (props)=>{
 
@@ -27,7 +27,7 @@ const Header = (props)=>{
       }
 
     return(
-        <div>
+ <div>
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div className="container">
          <a className="navbar-brand" href="#">Start Bootstrap</a>

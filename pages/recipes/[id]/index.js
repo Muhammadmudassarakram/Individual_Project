@@ -18,6 +18,7 @@ const Recipe = (props) => {
   }
 
   return (
+  <div className="recipe" {...props.auth}>
     <div className="container">
       <div className="jumbotron">
         <h1 className="display-4">{ recipe.name }</h1>
@@ -50,6 +51,7 @@ const Recipe = (props) => {
       <p className="desc-text">
         { recipe.longDesc }
       </p>
+     </div>
     </div>
   )
 }
