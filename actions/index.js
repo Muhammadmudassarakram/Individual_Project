@@ -1,4 +1,6 @@
 import axios from 'axios';
+import Cookies from 'js-cookie';
+import {getCookieFromReq} from '../helpers/utils'
 
   const RECIPE_DATA = [];
   const BASE_URL = 'http://localhost:3000';
@@ -27,6 +29,26 @@ import axios from 'axios';
     
     
   ]
+  
+  // Authorization functions
+  const setAuthHeader = (req) => {
+    const token = req ? getCookieFromReq(req, 'jwt') : Cookies.getJSON('jwt');
+  
+    if (token) {
+      return { headers: {'authorization': `Bearer ${token}`}};
+    }
+  
+    return undefined;
+  }
+
+  export const getSecretData = async (req) => {
+    return await axios.get(`${BASE_URL}/api/v1/secret`,setAuthHeader(req)).then (res=>res.data)
+  }
+
+  
+
+
+
 
 //export the recipe catogories   
   export const getCategories = () => {

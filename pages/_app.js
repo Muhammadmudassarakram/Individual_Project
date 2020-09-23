@@ -1,7 +1,7 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-import Navbar from '../components/navebar';
+import NaveBar from '../components/navebar';
 import Footer from '../components/footer';
 import '../styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -25,7 +25,7 @@ class RecipeApp extends App {
 
 
     render(){
-        const {Component, pageProps, auth} = this.props;
+        const {Component, pageProps, auth,isAuthenticated} = this.props;
 return(
 <div>
  <Head>
@@ -36,7 +36,7 @@ return(
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossOrigin="anonymous" ></script>
  </Head>
 
-  <Navbar isAuthenticated={auth} />
+  <NaveBar isAuthenticated={auth} />
   <div className="base-page">
   <Component {...pageProps}  auth={auth}/>
  </div>

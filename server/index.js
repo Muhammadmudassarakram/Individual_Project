@@ -5,14 +5,37 @@ const filePath = './data.json'
 const fs = require('fs')
 const path = require('path')
 const recipesData = require(filePath)
+const authService = require('./services/auth');
 
 const dev = process.env.NODE_ENV !== 'production'
 const app = next({ dev })
 const handle = app.getRequestHandler()
-app.prepare().then(() => {
 
+//secret data for server
+ 
+const secretData = [
+  {
+    title: 'SecretData 1',
+    description: 'Plans how to build spaceship'
+  },
+  {
+    title: 'SecretData 2',
+    description: 'My secret passwords'
+  }
+]
+
+app.prepare().then(() => {
   const server = express();
   server.use(bodyParser.json())
+
+ 
+  server.get('/api/v1/secret', authService.checkJWT, (req, res) => {
+    return res.json(secretData);
+  })
+
+  server.get('/api/v1/onlysiteowner', authService.checkJWT, authService.checkRole('siteOwner'), (req, res) => {
+      return res.json(secretData);
+  })
 
   server.get('/api/v1/recipes', (req, res) => {
     // return res.json({message: 'Hello World'})
@@ -94,6 +117,12 @@ app.prepare().then(() => {
     // next.js is handling requests and providing pages where we are navigating to
     return handle(req, res)
   })
+  server.use(function (err, req, res, next) {
+    if (err.name === 'UnauthorizedError') {
+      res.status(401).send({title: 'Unauthorized', detail: 'Unauthorized Access!'});
+    }
+  });
+
   const PORT = process.env.PORT || 3000;
   server.listen(PORT, (err) => {
     if (err) throw err
