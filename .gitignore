@@ -4,6 +4,12 @@
 /node_modules
 /.pnp
 .pnp.js
+/.next
+/server/.next
+/server/config/dev.js
+/.now 
+/resources
+
 
 # testing
 /coverage
