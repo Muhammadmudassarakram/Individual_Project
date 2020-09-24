@@ -9,9 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "node server/index.js",
-    "build": "next build",
     "start": "NODE_ENV=production & node server/index.js",
-    "heroku-postbuild": "npm run build"
+    "build": "ng build",
+    "heroku-postbuild": "ng build --prod"
   },
   "dependencies": {
     "@auth0/auth0-react": "^1.1.0",
