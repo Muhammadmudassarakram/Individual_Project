@@ -17,8 +17,8 @@ class RecipeApp extends App {
       pageProps = await Component.getInitialProps(ctx)
     }
 
-    //const isSiteOwner = user && user[process.env.NAMESPACE + '/role'] === 'siteOwner';
-    const auth = { user, isAuthenticated: !!user,};
+    const isSiteOwner = user && user[process.env.NAMESPACE + '/role'] === 'siteOwner';
+    const auth = { user, isAuthenticated: !!user, isSiteOwner};
 
     return { pageProps, auth }
   }

@@ -4,8 +4,14 @@ import Carousel from '../components/carousel';
 import RecipeList from '../components/RecipeList';
 import {getRecipes,getCategories} from '../actions';
 
+import Modal from '../components/Modal';
+import { useRouter } from 'next/router';
+import RecipeCreateForm from '../components/RecipeCreateForm';
+import { createRecipe } from '../actions';
+
 const Home = (props)=>{
   const { images, categories, recipes } = props;
+  const {isAuthenticated}=props.auth;
   const [ filter, setFilter ] =  useState('All')
 
   const changeCategory = category => {
@@ -20,14 +26,31 @@ const Home = (props)=>{
     return recipes.filter((r) => {
       return r.category && r.category.includes(filter)
     })
-
   }
+  const router = useRouter();
+
+  let modal = null;
+
+   const handleCreateRecipe = (recipe) => {
+    createRecipe(recipe).then((recipes) => {
+      modal.closeModal()
+      router.push('/')
+    })
+  }
+
+  
   return(
-    <div className="home-page" >
+    <div className="home-page" {...props.auth}>
       <div className="margin-nav" >
         <div className="container">
           <div className="row">
           <div className="col-lg-3">
+          
+          {isAuthenticated &&
+          <Modal ref={ele => modal = ele} hasSubmit={false}>
+           <RecipeCreateForm handleFormSubmit={handleCreateRecipe} />
+            </Modal>}
+           
             <SideMenue   
             changeCategory={changeCategory}
             activeCategory={filter}
@@ -68,58 +91,3 @@ export default Home;
 
 
 
-
-/*
-class Home extends React.Component 
-{
-  constructor(props){
-  super(props)
-  this.state = {
-    recipes : [],
-    errorMessage:''
-  }
-  }
-  componentDidMount(){
-    getRecipes()
-           .then((recipes)=>{
-             this.setState({recipes : recipes})
-           }
-           )
-           .catch((error)=>{
-             this.setState({errorMessage:error})
-             }
-            )
-  }
-
-render()
-{
-  //const {recipes} = this.state; //or  const recipes = this.state.recipes; then remove this.state
-  const {recipes , errorMessage } = this.state;
-  return(
-      <div>
-        <div className="home-page">
-        <div className="container">
-          <div className="row">
-          <div className="col-lg-3">
-            <SideMenue appName="My Recipe List"/>
-          </div>
-          <div className="col-lg-9">
-            <Carousel/>
-
-            {{recipes}?  <div className="row">
-            <RecipeList recipesData = {recipes}/>                     
-            </div> : (<div className="alert alert-danger" role="alert">
-              {errorMessage}
-            </div>)}
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-)
-}
-  }
-export default Home
-*/

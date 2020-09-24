@@ -21,14 +21,17 @@ class EditRecipe extends React.Component {
 
   render() {
     const { recipe } = this.props;
+    const {isAuthenticated}=this.props.auth;
+    console.log(isAuthenticated);
     return (
       <div className="editRecipe" {...this.props.auth}>
         <div className="container">
           <h1>Edit the Recipe</h1>
-          <RecipeCreateForm
+         { isAuthenticated &&
+         <RecipeCreateForm
             submitButton="Update"
             initialData={recipe}
-            handleFormSubmit={this.handleUpdateRecipe} />
+            handleFormSubmit={this.handleUpdateRecipe} />}
         </div>
       </div>
     )

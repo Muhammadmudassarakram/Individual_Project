@@ -7,7 +7,7 @@ import { getRecipeById,deleteRecipe } from '../../../actions';
 
 
 const Recipe = (props) => {
-
+    const {isAuthenticated}=props.auth;
     const router = useRouter()
     const { id } = router.query    // const id  = router.query.id;
     const { recipe } = props;
@@ -39,14 +39,17 @@ const Recipe = (props) => {
        <hr className="my-4" />
        <YouTube  className="youtube-player" video={recipe.video}  width="100%" height="350px" />
        <hr className="my-4" />
-
+       
         <button className="btn btn-primary btn-lg mr-1" href="#" role="button">Learn more</button>
-        <button onClick={() => handleDeleteRecipe(id)} className="btn btn-danger btn-lg mr-1" href="#" role="button">Delete</button>
+        {isAuthenticated &&
+        <button onClick={() => handleDeleteRecipe(id)} 
+        className="btn btn-danger btn-lg mr-1" href="#" role="button">Delete</button>}
+        {isAuthenticated &&
         <Link href="/recipes/[id]/edit" as={`/recipes/${id}/edit`}>
-           <button
+         <button
             className="btn btn-warning btn-lg"
             role="button">Edit</button>
-        </Link>
+        </Link>}
       </div>
       <p className="desc-text">
         { recipe.longDesc }
