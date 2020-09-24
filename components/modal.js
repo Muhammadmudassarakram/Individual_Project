@@ -16,9 +16,11 @@ class Modal extends React.Component{
       }
 
       render(){
+        const{isAuthenticated}=this.props;
+        console.log(isAuthenticated);
          return (
             <div className="Modal" >
-              { 
+              { isAuthenticated &&
                 <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Create Recipe
               </button>}

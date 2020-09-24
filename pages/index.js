@@ -46,10 +46,10 @@ const Home = (props)=>{
           <div className="row">
           <div className="col-lg-3">
           
-          {isAuthenticated &&
-          <Modal ref={ele => modal = ele} hasSubmit={false}>
+          
+          <Modal isAuthenticated={isAuthenticated} ref={ele => modal = ele} hasSubmit={false}>
            <RecipeCreateForm handleFormSubmit={handleCreateRecipe} />
-            </Modal>}
+            </Modal>
            
             <SideMenue   
             changeCategory={changeCategory}
