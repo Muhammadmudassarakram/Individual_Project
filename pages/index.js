@@ -3,11 +3,11 @@ import SideMenue from '../components/sideManue';
 import Carousel from '../components/carousel';
 import RecipeList from '../components/RecipeList';
 import {getRecipes,getCategories} from '../actions';
-
+import Wraper from '../components/shared/Wraper';
 import Modal from '../components/Modal';
 import { useRouter } from 'next/router';
 import RecipeCreateForm from '../components/RecipeCreateForm';
-import { createRecipe } from '../actions';
+import { createRecipe } from '../actions/index';
 
 const Home = (props)=>{
   const { images, categories, recipes } = props;

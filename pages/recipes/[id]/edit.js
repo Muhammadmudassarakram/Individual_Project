@@ -1,7 +1,8 @@
 import React from 'react';
 import Router from 'next/router';
-import RecipeCreateForm from '../../../components/recipeCreateForm';
+import RecipeUpdateForm from '../../../components/RecipeUpdateForm';
 import { getRecipeById,updateRecipe } from '../../../actions';
+import Wraper from '../../../components/shared/Wraper';
 
 
 class EditRecipe extends React.Component {
@@ -28,7 +29,7 @@ class EditRecipe extends React.Component {
         <div className="container">
           <h1>Edit the Recipe</h1>
          { isAuthenticated &&
-         <RecipeCreateForm
+         <RecipeUpdateForm
             submitButton="Update"
             initialData={recipe}
             handleFormSubmit={this.handleUpdateRecipe} />}

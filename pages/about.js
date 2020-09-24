@@ -1,4 +1,5 @@
 import React from 'react';
+import Wraper from '../components/shared/Wraper'
 class About extends React.Component{
 
     render()
