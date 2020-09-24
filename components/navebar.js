@@ -16,8 +16,7 @@ const Logout = () => {
 }
 export default class Navebar extends React.Component {
 
-   // const { isAuthenticated, user, className } = props;
-   constructor(props){
+    constructor(props){
 
      super(props);
 
@@ -26,7 +25,7 @@ export default class Navebar extends React.Component {
           
      render(){
       const { isAuthenticated } = this.props;
-      console.log(isAuthenticated.isAuthenticated);
+      
     return(
         <div>
          <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">

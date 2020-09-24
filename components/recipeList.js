@@ -46,7 +46,7 @@ shortenText = (text,maxLength)=>{
   
       render(){
        
-       const {recipes} = this.props;                  //const recipes = this.props.recipes;
+       const {recipes} = this.props;                  
       
       return(
         <React.Fragment>
