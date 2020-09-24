@@ -32,7 +32,7 @@ const secretData = [
 
 //Db connection
 
-mongoose.connect(config.DB_URI, { useNewUrlParser: true},{ useUnifiedTopology: true })
+mongoose.connect(config.DB_URI, { useNewUrlParser: true})
   .then(() => console.log('Database Connected!'))
   .catch(err => console.error(err));
 
@@ -68,10 +68,8 @@ app.prepare().then(() => {
   server.post('/api/v1/recipes', (req, res) => {
     const recipe = req.body
     recipesData.push(recipe)
-
     const pathToFile = path.join(__dirname, filePath)
     const stringifiedData = JSON.stringify(recipesData, null, 2)
-
     fs.writeFile(pathToFile, stringifiedData, (err) => {
       if (err) {
         return res.status(422).send(err)
@@ -85,12 +83,9 @@ app.prepare().then(() => {
     const { id } = req.params
     const recipe = req.body
     const recipeIndex = recipesData.findIndex(r => r.id === id)
-
     recipesData[recipeIndex] = recipe
-
     const pathToFile = path.join(__dirname, filePath)
     const stringifiedData = JSON.stringify(recipesData, null, 2)
-
     fs.writeFile(pathToFile, stringifiedData, (err) => {
       if (err) {
         return res.status(422).send(err)
@@ -118,18 +113,8 @@ app.prepare().then(() => {
 
   })
 
-  // server.get('/faq', (req, res) => {
-  //   res.send(`
-  //     <html>
-  //       <head></head>
-  //       <body><h1>Hello World!</h1>
-  //       </body>
-  //     </html>
-  //   `)
-  // })
-
-  // we are handling all of the request comming to our server
-  server.get('*', (req, res) => {
+    // we are handling all of the request comming to our server
+     server.get('*', (req, res) => {
     // next.js is handling requests and providing pages where we are navigating to
     return handle(req, res)
   })
