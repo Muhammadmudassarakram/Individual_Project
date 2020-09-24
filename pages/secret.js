@@ -23,8 +23,7 @@ class Secret extends React.Component{
         
           displaySecretData() {
             const { secretData } = this.state;
-           // console.log(secretData);
-        
+                 
             if ( secretData && secretData.length > 0) {
               return secretData.map((data, index) => {
                 return (

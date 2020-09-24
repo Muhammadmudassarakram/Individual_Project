@@ -20,14 +20,7 @@ const RecipeCreateForm = (props) => {
 
   const [form, setForm] = useState(formData)
 
-  // useEffect(() => {
-  //   if (props.initialData) {
-  //     setForm(props.initialData)
-  //     setIsInitialDataLoaded(true)
-  //   }
-  // }, [isInitialDataLoaded])
-
-      const handleChange = (event) => {
+  const handleChange = (event) => {
         const target = event.target
         const name = target.name
 
@@ -38,7 +31,7 @@ const RecipeCreateForm = (props) => {
       }
 
       const handleCategoryChange = (event) => {
-        //debugger
+        
         const { options } = event.target
         const optionsLength = options.length
         let value = []
