@@ -6,9 +6,9 @@ class Services extends React.Component{
     render()
     {
         return(
-          <div className="services" {...this.props.auth}>
+          <Wraper {...this.props.auth}>
             <h1>I am Services page</h1>
-           </div>
+           </Wraper>
         )
     }
 }

@@ -3,6 +3,7 @@ import Router from 'next/router';
 import RecipeUpdateForm from '../../../components/RecipeUpdateForm';
 import { getRecipeById,updateRecipe } from '../../../actions';
 import Wraper from '../../../components/shared/Wraper';
+//import { Container } from 'reactstrap';
 
 
 class EditRecipe extends React.Component {
@@ -25,7 +26,7 @@ class EditRecipe extends React.Component {
     const {isAuthenticated}=this.props.auth;
     console.log(isAuthenticated);
     return (
-      <div className="editRecipe" {...this.props.auth}>
+      <Wraper {...this.props.auth}>
         <div className="container">
           <h1>Edit the Recipe</h1>
          { isAuthenticated &&
@@ -34,7 +35,7 @@ class EditRecipe extends React.Component {
             initialData={recipe}
             handleFormSubmit={this.handleUpdateRecipe} />}
         </div>
-      </div>
+      </Wraper>
     )
   }
 }

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-//import { ListGroup, ListGroupItem } from 'reactstrap';
+import Wraper from '../../../components/shared/Wraper';
 import YouTube from '@u-wave/react-youtube';
 import { getRecipeById,deleteRecipe } from '../../../actions';
 
@@ -18,7 +18,7 @@ const Recipe = (props) => {
   }
 
   return (
-  <div className="recipe" {...props.auth}>
+  <Wraper {...props.auth}>
     <div className="container">
       <div className="jumbotron">
         <h1 className="display-4">{ recipe.name }</h1>
@@ -55,7 +55,7 @@ const Recipe = (props) => {
         { recipe.longDesc }
       </p>
      </div>
-    </div>
+    </Wraper>
   )
 }
 

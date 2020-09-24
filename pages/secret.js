@@ -43,12 +43,12 @@ class Secret extends React.Component{
     render(){
         const { superSecretValue } = this.props;
         return(
-        <div className="secret" {...this.props.auth}>
+        <Wraper className="secret" {...this.props.auth}>
         <h1>I am Secret Page</h1>
         <p>Secrest content here</p>
         <h2> {superSecretValue} </h2>
           { this.displaySecretData() }
-       </div>)
+       </Wraper>)
     }
 }
 export default withAuth()(Secret);

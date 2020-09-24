@@ -40,7 +40,7 @@ const Home = (props)=>{
 
   
   return(
-    <div className="home-page" {...props.auth}>
+    <Wraper {...props.auth}>
       <div className="margin-nav" >
         <div className="container">
           <div className="row">
@@ -67,7 +67,7 @@ const Home = (props)=>{
           </div>
         </div>
       </div>
-    </div>
+    </Wraper>
 
   )
 
