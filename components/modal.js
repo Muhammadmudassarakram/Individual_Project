@@ -17,7 +17,6 @@ class Modal extends React.Component{
 
       render(){
         const{isAuthenticated}=this.props;
-        console.log(isAuthenticated);
          return (
             <div className="Modal" >
               { isAuthenticated &&
