@@ -37,5 +37,8 @@
     "react-dom": "16.9.0",
     "react-toastify": "^6.0.8",
     "reactstrap": "^8.5.1"
+  },
+  "devDependencies": {
+    "terser": "^3.14.1"
   }
 }
