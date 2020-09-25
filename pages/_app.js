@@ -1,8 +1,8 @@
 import React from 'react';
 import App from 'next/app';
 import Head from 'next/head';
-import NaveBar from '../components/navebar';
-import Footer from '../components/footer';
+import NaveBar from '../components/NaveBar';
+import Footer from '../components/Footer';
 import '../styles/index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import auth0 from '../services/auth0';

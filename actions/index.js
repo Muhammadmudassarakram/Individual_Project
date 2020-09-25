@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 import {getCookieFromReq} from '../helpers/utils'
 
   const RECIPE_DATA = [];
-  const BASE_URL = 'http://localhost:3000';
+  const BASE_URL = process.env.BASE_URL;
 
   const CATEGORY_DATA = [
     {id: 'c-0', name: 'All'},
