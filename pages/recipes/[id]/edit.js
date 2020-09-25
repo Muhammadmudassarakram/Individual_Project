@@ -2,7 +2,7 @@ import React from 'react';
 import Router from 'next/router';
 import RecipeUpdateForm from '../../../components/recipeCreateForm';
 import { getRecipeById,updateRecipe } from '../../../actions';
-import Wraper from '../../../components/shared/wraper';
+import Wraper from '../../../components/shared/wraper' ;
 //import { Container } from 'reactstrap';
 
 
