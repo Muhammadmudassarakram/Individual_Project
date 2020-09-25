@@ -1,6 +1,6 @@
 import React from 'react';
 import withAuth from '../components/hoc/withAuth';
-import Wraper from '../components/shared/Wraper';
+import Wraper from '../components/shared/wraper';
 
 class Owner extends React.Component {
 

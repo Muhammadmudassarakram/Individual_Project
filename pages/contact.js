@@ -1,5 +1,5 @@
 import React from 'react';
-import Wraper from '../components/shared/Wraper';
+import Wraper from '../components/shared/wraper';
 
 class Contact extends React.Component{
 

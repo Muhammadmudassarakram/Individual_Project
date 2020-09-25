@@ -1,7 +1,7 @@
 import React from 'react';
 import withAuth from '../components/hoc/withAuth';
 import {getSecretData} from '../actions/index';
-import Wraper from '../components/shared/Wraper';
+import Wraper from '../components/shared/wraper';
 
 class Secret extends React.Component{
    

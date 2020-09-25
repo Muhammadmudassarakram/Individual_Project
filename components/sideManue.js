@@ -1,7 +1,7 @@
 import {useState} from 'react';                               //To use the state in functional component
-import Modal from './Modal';
+import Modal from './modal';
 import { useRouter } from 'next/router';
-import RecipeCreateForm from './RecipeCreateForm';
+import RecipeCreateForm from './recipeCreateForm';
 import { createRecipe } from '../actions/index';
 
 const SideMenue = (props)=>{

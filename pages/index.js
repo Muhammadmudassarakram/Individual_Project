@@ -1,9 +1,9 @@
 import React,{useState , useEffect} from 'react';
-import SideMenue from '../components/SideManue';
+import SideMenue from '../components/sideManue';
 import Carousel  from '../components/carousel';
-import RecipeList from '../components/RecipeList';
+import RecipeList from '../components/recipeList';
 import {getRecipes,getCategories} from '../actions';
-import Wraper from '../components/shared/Wraper';
+import Wraper from '../components/shared/wraper';
 
 const Home = (props)=>{
   const { images, categories, recipes } = props;
