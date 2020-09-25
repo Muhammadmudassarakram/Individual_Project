@@ -4,10 +4,6 @@ import Carousel from '../components/carousel';
 import RecipeList from '../components/RecipeList';
 import {getRecipes,getCategories} from '../actions';
 import Wraper from '../components/shared/Wraper';
-import Modal from '../components/Modal';
-import { useRouter } from 'next/router';
-import RecipeCreateForm from '../components/RecipeCreateForm';
-import { createRecipe } from '../actions/index';
 
 const Home = (props)=>{
   const { images, categories, recipes } = props;
@@ -27,16 +23,7 @@ const Home = (props)=>{
       return r.category && r.category.includes(filter)
     })
   }
-  const router = useRouter();
-
-  let modal = null;
-
-   const handleCreateRecipe = (recipe) => {
-    createRecipe(recipe).then((recipes) => {
-      modal.closeModal()
-      router.push('/')
-    })
-  }
+  
 
   
   return(
@@ -45,13 +32,9 @@ const Home = (props)=>{
         <div className="container">
           <div className="row">
           <div className="col-lg-3">
-          
-          
-          <Modal isAuthenticated={isAuthenticated} ref={ele => modal = ele} hasSubmit={false}>
-           <RecipeCreateForm handleFormSubmit={handleCreateRecipe} />
-            </Modal>
-           
-            <SideMenue   
+                  
+            <SideMenue 
+            isAuthenticated={isAuthenticated}   
             changeCategory={changeCategory}
             activeCategory={filter}
             categories={categories}
