@@ -1,6 +1,6 @@
 import React,{useState , useEffect} from 'react';
 import SideMenue from '../components/SideManue';
-import Carousel  from '../components/Carousel';
+import Carousel  from '../components/carousel';
 import RecipeList from '../components/RecipeList';
 import {getRecipes,getCategories} from '../actions';
 import Wraper from '../components/shared/Wraper';
