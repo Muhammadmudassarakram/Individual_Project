@@ -3,7 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import NaveBar from '../components/naveBar';
 import Footer from '../components/footer';
-import '../styles/index.scss';
+import '../styles/main.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import auth0 from '../services/auth0';
 

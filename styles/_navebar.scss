@@ -1,0 +1,70 @@
+
+  .navbar {
+    min-height: 80;
+    color: white;
+    z-index: 15;
+    padding: 20px;
+
+    .nav-item {
+      padding-right: 25px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #007bff;
+      margin-left: 10px;
+      margin-right: 10px;
+      
+    }
+    .nav-link {
+      //color: white;
+     // font-weight: bold;
+      //letter-spacing: 0.8px;
+      //font-size: 18px;
+      //text-transform: uppercase;
+
+      &.active {
+      color: #dba919;
+      }
+
+      &:hover, &:focus {
+        color: #dba919;
+      }
+    }
+  }
+  
+
+  .navbar-brand {
+    color: white;
+    padding-left: 15px;
+        .desi-recipes-logo{
+          transition: transform .5s;  
+          width: 150px;
+          height: 90px;
+        }
+        &.active {
+          color: #dba919;
+          }
+    
+          &:hover, &:focus {
+            color: #dba919;
+          }
+        .desi-recipes-logo:hover{
+          transform: scale(1.1);
+          color: #dba919;
+        }
+    
+  }
+  .navbar-toggler{
+     color: #dba919;
+         
+    .navbar-toggler-icon{
+    
+      background-color: #007bff;;
+      
+      
+    }}
+  
+  /*
+  .collapse {                            //navebar collapse area
+    background-color: yellowgreen;
+    color: yellowgreen;
+  }*/
